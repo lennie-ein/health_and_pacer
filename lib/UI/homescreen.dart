@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:healthy_pacer/UI/eventsscreen.dart';
+import 'package:healthy_pacer/UI/healthscreen.dart';
+import 'package:healthy_pacer/UI/leaderboard.dart';
 import 'package:healthy_pacer/Utils/constants.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 
@@ -19,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
     super.initState();
     _tabController = TabController(
       initialIndex: 1,
-      length: 3,
+      length: 4,
       vsync: this,
     );
   }
@@ -35,11 +38,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
     return Scaffold(
       bottomNavigationBar: MotionTabBar(
         initialSelectedTab: "Dashboard",
-        labels: const ["Events", "Dashboard", 'Leader Board'],
-        icons: [
+        labels: const ["Events", "Dashboard", 'Leader Board','Health'],
+        icons: const [
           CupertinoIcons.circle_grid_hex_fill,
           CupertinoIcons.home,
-          CupertinoIcons.square_favorites
+          CupertinoIcons.square_favorites,
+          CupertinoIcons.bandage
         ],
         onTabItemSelected: (int value) {
           setState(() {
@@ -52,6 +56,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
         textStyle: TextStyle(
             color: HealthyColors.HealthyNavy, fontWeight: FontWeight.bold),
       ),
+      body:  TabBarView(children: [
+        const EventScreen(),
+        Column(),
+        const LeaderBoardScreen(),
+        const HealthScreen()
+      ],
+        controller: _tabController,),
     );
   }
 }
