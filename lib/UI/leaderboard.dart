@@ -12,7 +12,7 @@ class _LeaderBoardScreenState extends State<LeaderBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HealthyColors.HealthyLeafy,
+      backgroundColor: HealthyColors.HealthyWhite,
     );
   }
 }

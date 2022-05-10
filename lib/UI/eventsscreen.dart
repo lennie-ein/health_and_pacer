@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Utils/constants.dart';
+
 class EventScreen extends StatefulWidget {
   const EventScreen({Key? key}) : super(key: key);
 
@@ -10,6 +12,8 @@ class EventScreen extends StatefulWidget {
 class _EventScreenState extends State<EventScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: HealthyColors.HealthyWhite,
+    );
   }
 }

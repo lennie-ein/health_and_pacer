@@ -50,11 +50,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
             _tabController!.index = value;
           });
         },
-        tabBarColor: HealthyColors.HealthyLeafy,
-        tabSelectedColor: HealthyColors.HealthyNavy,
-        tabIconColor: HealthyColors.HealthyNavy,
+        tabBarColor: HealthyColors.HealthyGrey,
+        tabSelectedColor: HealthyColors.HealthyDarkGrey,
+        tabIconColor: HealthyColors.HealthyDarkGrey,
+        tabIconSelectedColor: HealthyColors.HealthyRedi,
         textStyle: TextStyle(
-            color: HealthyColors.HealthyNavy, fontWeight: FontWeight.bold),
+            color: HealthyColors.HealthyDarkGrey, fontWeight: FontWeight.bold),
       ),
       body:  TabBarView(children: [
         const EventScreen(),
